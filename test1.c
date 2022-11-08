@@ -14,19 +14,22 @@ int _printf(const char *format, ...)
     	va_start (ap, format);
 
 	i = 0;
-	num_of_chars = strlen(format);
+	num_of_chars = 0;
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == 'c')
 			{
-				write(1, format, strlen(format));
+				putchar(va_arg(ap, int));
+				i = i + 1;
+				num_of_chars = num_of_chars + 1;
 			}
 		}
 		else
 		{
-			write(1, &format[i], 1);
+			putchar(format[i]);
+			num_of_chars = num_of_chars + 1;
 		}
 		i = i + 1;
 	}
@@ -38,10 +41,11 @@ int _printf(const char *format, ...)
 void main()
 {
 	char h;
-	int i;
+	int i, len, len1;
 
 	h = 'h';
 	i = '%';
-	_printf("This is a char\n");
-	printf("This is a char\n");
+	len = _printf("This is a char %c\n", h);
+	len1 = printf("This is a char %c\n", h);
+	printf("_printf = %d, printf = %d\n", len, len1);
 }
