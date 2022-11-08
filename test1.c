@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
-#include "main.h"
+
 
 int _printf(const char *format, ...)
 {
@@ -24,6 +24,10 @@ int _printf(const char *format, ...)
 				write(1, format, strlen(format));
 			}
 		}
+		else
+		{
+			write(1, &format[i], 1);
+		}
 		i = i + 1;
 	}
 
@@ -38,6 +42,6 @@ void main()
 
 	h = 'h';
 	i = '%';
-	_printf("This is a char %c\n", i);
-	printf("This is a char %c\n", h);
+	_printf("This is a char\n");
+	printf("This is a char\n");
 }
