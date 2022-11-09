@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 	{
-		exit(0);
+		return (-1);
 	}
 	while (format[i] != '\0')
 	{
@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 			{
 				i = i + 1;
 			}
-			write(1, &format[i], 1);
+			wrote(1, &format[i], 1);
 		}
 		i = i + 1;
 	}

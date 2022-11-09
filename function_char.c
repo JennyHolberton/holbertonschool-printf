@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
-#include <unistd.h>
+print_char#include "main.h"
 
 /**
  * _putchar - writes the character c to stdout
@@ -26,7 +23,7 @@ int print_str(va_list type)
 	int i;
 
 	i = 0;
-	while (i < (va_arg(ap, char)[i]) != '\0')
+	while ((va_arg(ap, char)[i]) != '\0')
 	{
 		_putchar((va_arg(ap, char)[i]));
 		i = i + 1;
