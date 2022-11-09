@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int i;
 	int num_of_chars;
+	char *str;
 
     	va_start (ap, format);
 
@@ -19,11 +20,28 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
+			if (format[i + 1] == '%')
+			{
+				putchar('%');
+				i = i + 1;
+				num_of_chars = num_of_chars + 1;
+			}
 			if (format[i + 1] == 'c')
 			{
 				putchar(va_arg(ap, int));
 				i = i + 1;
 				num_of_chars = num_of_chars + 1;
+			}
+			if (format[i + 1] == 's')
+			{
+				str = (va_arg(ap, char *));
+				while(*str != '\0')
+				{
+					putchar(*str);
+					str = str + 1;
+					num_of_chars = num_of_chars + 1;
+				}
+				i = i + 1;
 			}
 		}
 		else
@@ -43,9 +61,11 @@ void main()
 	char h;
 	int i, len, len1;
 
+
 	h = 'h';
 	i = '%';
-	len = _printf("This is a char %c\n", h);
-	len1 = printf("This is a char %c\n", h);
+
+	len = _printf("This is a char %c %% %s\n", h, "pallavi");
+	len1 = printf("This is a char %c %% %s\n", h, "pallavi");
 	printf("_printf = %d, printf = %d\n", len, len1);
 }
