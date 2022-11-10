@@ -1,4 +1,4 @@
-print_char#include "main.h"
+#include "main.h"
 
 /**
  * _putchar - writes the character c to stdout
@@ -12,26 +12,28 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 
-int print_char(va_list type)
+int print_char(va_list ap)
 {
     	_putchar(va_arg(ap, int));
 	return (1);
 }
 
-int print_str(va_list type)
+int print_str(va_list ap)
 {
 	int i;
+	char *str;
 
+	str = va_arg(ap, char*);
 	i = 0;
-	while ((va_arg(ap, char)[i]) != '\0')
+	while (str[i] != '\0')
 	{
-		_putchar((va_arg(ap, char)[i]));
+		_putchar(str[i]);
 		i = i + 1;
 	}
 	return (i);
 }
 
-int print_percent(va_list type)
+int print_percent(__attribute__((unused)) va_list ap)
 {
 	_putchar('%');
 	return (1);

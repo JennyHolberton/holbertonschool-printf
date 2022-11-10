@@ -4,28 +4,21 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <string.h>
 
-struct datatypes
-{
-    char is_c;
-    char is_s;
-    char is_percent;
-	/*long as_long;
-    float as_float;
-    double as_double;
-    void* as_ptr*/
-};
-typedef struct datatypes
+struct specifiers
 {
 	char *ptr;
-	int (*f)(va_arg type);
-} d_types;
+	int (*f)(va_list ap);
+};
+typedef struct specifiers specifiers_t;
 
 int _putchar(char c);
-int print_char(va_list type);
-int print_str(va_list type);
-int print_percent(va_list type);
-
+int print_char(va_list ap);
+int print_str(va_list ap);
+int print_percent(va_list ap);
+int print_int(va_list ap);
+int _print_int(int num);
 int _printf(const char *format, ...);
 
 #endif /* _MAIN_H_ */
