@@ -1,1 +1,37 @@
 SYNOPSIS
+	#include "main.h"
+	int printf(const char *format, ...);
+
+RETURN VALUE
+       Function returns the number (count) of total characters printed to the
+       standard output. Null character '\0' is not included in the count.
+       If the input argument is NULL, or in case of an input error, -1 is
+       returned to the standard output.
+SEE ALSO
+       printf (man 3 printf), write (man 2 write)
+
+EXAMPLES
+	To print the character 'a':
+
+	   #include "main.h"
+	   char = 'a'
+	    _printf("This is the first letter of the alphabet: %c", char);
+
+	To print "Holberton is the best school!":
+
+	   #include "main.h"
+	   _printf("%s", "Holberton is the best school!");
+
+	To print the percentage sign:
+
+	   #include "main.h"
+	   _printf("The modulus operator is a %% sign");
+
+	To print a number:
+
+	   #include "main.h"
+	   int x = 7;
+	   int y = 031986;
+	   _printf("%i is a lucky number and %d is just random...", y, x);
+
+COPYRIGHT
