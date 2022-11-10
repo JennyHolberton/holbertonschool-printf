@@ -1,23 +1,17 @@
 CC=gcc
-CFLAGS=-Wall -Werror -Wextra -pedantic -std=gnu89
+CFLAGS=-Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format
 RM=rm -rf
+SRC=function_char.c function_int.c _printf.c test.c
+TARGET=_printf
 
-TARGET0=a
-SRC0=    test1.c
-
-TARGET1=b
-SRC1= 	 test2.c
-
-all: 0 1
+all:
+	$(CC) $(CFLAGS) $(SRC) -o $(TARGET)
 
 clean:
 	$(RM) *~ \#*\# \.\#* \
-        $(TARGET0) $(TARGET1)
+        $(TARGET)
 
 re: clean all
 
-0:
-	$(CC) $(CFLAGS) $(SRC0) -o $(TARGET0)
-
-1:
-	$(CC) $(CFLAGS) $(SRC1) -o $(TARGET1)
+dev:
+	$(CC) $(SRC) -o $(TARGET)
