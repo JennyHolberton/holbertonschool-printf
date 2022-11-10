@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * func_return - finds correct func according to the specifier
+ * @specifier: pointer to specifier char to be checked
+ * @ap: pointer to the array of actual specifiers
+ * Return: number of characters
+ */
+
 int func_return (const char* specifier, va_list ap)
 {
 	specifiers_t print_array[] = {
@@ -12,7 +19,7 @@ int func_return (const char* specifier, va_list ap)
 	};
 
 	int i = 0;
-	while (print_array[i].ptr != NULL)
+	while (print_array[i].ptr != NULL && specifier != NULL)
 	{
 		if (*(print_array[i].ptr) == *specifier)
 		{
@@ -23,12 +30,18 @@ int func_return (const char* specifier, va_list ap)
 	return (-1);
 }
 
+/**
+ * _printf - prints a given string including specified characters or numbers
+ * @format: pointer to specifier char to be checked
+ * Return: number of characters printed
+ */
+
 int _printf(const char *format, ...)
 {
 	va_list ap;
 	int i = 0;
 	int num_of_chars = 0;
-	int n;
+	int func_ptr;
 
     	va_start (ap, format);
 
@@ -40,8 +53,12 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			n = func_return(format + 1, ap);
-			num_of_chars = num_of_chars + n;
+			if (format[i + 1] != '\0')
+			{
+				func_ptr = func_return(format, ap);
+				i = i + 1;
+				num_of_chars = num_of_chars + func_ptr;
+			}
 		}
 		else
 		{
