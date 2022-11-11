@@ -48,6 +48,7 @@ int print_str(va_list ap)
 
 /**
  * print_int - prints a number
+ * @ap: string to printed
  * Return: Prints number of character it printed
  */
 int print_int(va_list ap)
