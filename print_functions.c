@@ -86,7 +86,7 @@ int _print_int(int num)
 	}
 	if (n / 10 != 0)
 	{
-		_print_int(n / 10);
+		i = i + _print_int(n / 10);
 		i = i + 1;
 	}
 	_putchar(n % 10 + '0');
