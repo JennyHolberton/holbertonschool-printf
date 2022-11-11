@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * _printf - Produces output according to functions
+ * _printf - prints a given string including specified characters or numbers
  * @format: pointer to char in string passed
- * Return: Number of characters it printed
+ * Return: number of characters printed
  */
 int _printf(const char *format, ...)
 {

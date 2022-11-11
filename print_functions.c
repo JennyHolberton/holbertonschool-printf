@@ -11,10 +11,11 @@ int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
+
 /**
- * print_char - print a char
- * @ap: the list of arguments the function _printf is receiving
- * Return: the number of characteres of the string
+ * print_char - prints a char
+ * @ap: list of arguments to be printed
+ * Return: number of characters printed, 1
  */
 int print_char(va_list ap)
 {
@@ -25,7 +26,7 @@ int print_char(va_list ap)
 /**
  * print_str - prints a string
  * @ap: string to printed
- * Return: number of chars in string
+ * Return: number of chars in string printed
  */
 int print_str(va_list ap)
 {
@@ -48,8 +49,8 @@ int print_str(va_list ap)
 
 /**
  * print_int - prints a number
- * @ap: string to printed
- * Return: Prints number of character it printed
+ * @ap: number(s) to printed
+ * Return: function that prints a number
  */
 int print_int(va_list ap)
 {
@@ -61,8 +62,8 @@ int print_int(va_list ap)
 
 /**
  * _print_int - prints a number using recursion
- * @num: number to be printed
- * Return: Number of character printed
+ * @num: number(s) to be printed
+ * Return: number of integers printed
  */
 int _print_int(int num)
 {
