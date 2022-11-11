@@ -13,6 +13,10 @@ int _printf(const char *format, ...)
 
 	i = 0;
 	num_of_chars = 0;
+	if (format == NULL)
+	{
+		return (-1);
+	}
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
