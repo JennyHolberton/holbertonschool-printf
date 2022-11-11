@@ -19,7 +19,7 @@ int _putchar(char c)
  */
 int print_char(va_list ap)
 {
-	putchar(va_arg(ap, int));
+	_putchar(va_arg(ap, int));
 	return (1);
 }
 
@@ -41,7 +41,7 @@ int print_str(va_list ap)
 	}
 	while (string[i] != '\0')
 	{
-		putchar(string[i]);
+		_putchar(string[i]);
 		i = i + 1;
 	}
 	return (i);
@@ -72,13 +72,13 @@ int _print_int(int num)
 	i = 0;
 	if (num < 0)
 	{
-		putchar('-');
+		_putchar('-');
 		num = num * -1;
 		i = i + 1;
 	}
 	if (num == 0)
 	{
-		putchar('0');
+		_putchar('0');
 		i = i + 1;
 		return (i);
 	}
@@ -86,7 +86,7 @@ int _print_int(int num)
 	{
 		i = i + _print_int(num / 10);
 	}
-	putchar(num % 10 + '0');
+	_putchar(num % 10 + '0');
 	i = i + 1;
 	return (i);
 }
