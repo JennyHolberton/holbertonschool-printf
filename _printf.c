@@ -7,7 +7,7 @@
  * Return: number of characters
  */
 
-int func_return (const char* specifier, va_list ap)
+int func_return(const char *specifier, va_list ap)
 {
 	specifiers_t print_array[] = {
 		{"c", print_char},
@@ -19,6 +19,7 @@ int func_return (const char* specifier, va_list ap)
 	};
 
 	int i = 0;
+
 	while (print_array[i].ptr != NULL && specifier != NULL)
 	{
 		if (*(print_array[i].ptr) == *specifier)
@@ -43,7 +44,7 @@ int _printf(const char *format, ...)
 	int num_of_chars = 0;
 	int func_ptr;
 
-    	va_start (ap, format);
+	va_start(ap, format);
 
 	if (format == NULL)
 	{

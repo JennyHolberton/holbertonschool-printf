@@ -13,13 +13,13 @@ int _putchar(char c)
 }
 
 /**
- * print_char: prints a char
+ * print_char - prints a char
  * @ap: char to be printed
  * Return: number of chars, 1
  */
 int print_char(va_list ap)
 {
-    	_putchar(va_arg(ap, int));
+	_putchar(va_arg(ap, int));
 	return (1);
 }
 /**
@@ -47,6 +47,7 @@ int print_str(va_list ap)
 }
 /**
  * print_percent - prints a percentage sign
+ * @ap: character to be printed
  * Return: number of chars, 1
  */
 int print_percent(__attribute__((unused)) va_list ap)
