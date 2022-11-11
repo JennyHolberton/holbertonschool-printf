@@ -10,9 +10,6 @@
 int main(void)
 {
 	int len, len1;
-	len = _printf("foobar%");
-	len1 = printf("foobar%");
-	printf("_printf len = %d, printf len = %d\n", len, len1);
    len = _printf("Length:[%d, %i]\n", -22, -22);
     len1 = printf("Length:[%d, %i]\n", -22, -22);
  printf("_printf len = %d, printf len = %d\n", len, len1);

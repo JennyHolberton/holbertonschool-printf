@@ -15,3 +15,6 @@ re: clean all
 
 dev:
 	$(CC) $(SRC) -o $(TARGET)
+
+betty:
+	betty $(SRC)
