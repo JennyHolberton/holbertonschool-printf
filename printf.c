@@ -9,7 +9,7 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int i, num_of_chars, size;
 
-    	va_start (ap, format);
+	va_start(ap, format);
 
 	i = 0;
 	num_of_chars = 0;
