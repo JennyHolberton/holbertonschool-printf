@@ -68,25 +68,28 @@ int print_int(va_list ap)
 int _print_int(int num)
 {
 	int i;
+	unsigned int n;
 
 	i = 0;
+	n = num;
 	if (num < 0)
 	{
 		_putchar('-');
-		num = num * -1;
+		n = n * -1;
 		i = i + 1;
 	}
-	if (num == 0)
+	if (n == 0)
 	{
 		_putchar('0');
 		i = i + 1;
 		return (i);
 	}
-	if (num / 10 != 0)
+	if (n / 10 != 0)
 	{
-		i = i + _print_int(num / 10);
+		_print_int(n / 10);
+		i = i + 1;
 	}
-	_putchar(num % 10 + '0');
+	_putchar(n % 10 + '0');
 	i = i + 1;
 	return (i);
 }
