@@ -7,7 +7,7 @@
 /**
  * struct specifier - Structure to hold specifier and print function pointer
  *
- * @specifier: the characters representing specifier
+ * @ptr: Pointer to specifier
  * @print: Pointer to function
  **/
 typedef struct specifier
