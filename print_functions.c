@@ -37,7 +37,7 @@ int print_str(va_list ap)
 	string = va_arg(ap, char*);
 	if (string == NULL)
 	{
-		return (-1);
+		string = "(null)";
 	}
 	while (string[i] != '\0')
 	{
