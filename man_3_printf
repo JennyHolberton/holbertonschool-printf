@@ -1,12 +1,32 @@
+NAME
+	_printf
+
 SYNOPSIS
 	#include "main.h"
 	int printf(const char *format, ...);
 
+DESCRIPTION
+	The _printf function produces an  output according to
+       a format input argument to stdout.
+
+Conversion specifiers-
+  	   conversion specifiers and their meanings are as follows:
+c	    writes one character
+
+s	    Characters from the array are written
+	    up to (but not including) a terminating null byte
+              ('\0')
+
+d, i	   It wrritens argument in signed decimal notation
+
+%      	     A '%' is written.  No argument is converted.  The complete
+              conversion specification is '%%'
 RETURN VALUE
        Function returns the number (count) of total characters printed to the
        standard output. Null character '\0' is not included in the count.
        If the input argument is NULL, or in case of an input error, -1 is
        returned to the standard output.
+
 SEE ALSO
        printf (man 3 printf), write (man 2 write)
 
@@ -34,4 +54,5 @@ EXAMPLES
 	   int y = 031986;
 	   _printf("%i is a lucky number and %d is just random...", y, x);
 
+AUTHORS	   Pallavi J, Jenny N
 COPYRIGHT
