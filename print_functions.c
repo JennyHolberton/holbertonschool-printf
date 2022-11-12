@@ -57,6 +57,11 @@ int print_int(va_list ap)
 	int num;
 
 	num = va_arg(ap, int);
+	if (num == INT_MIN)
+	{
+		_putchar('-');
+		return (print_unsigned(num) + 1);
+	}
 	return (_print_int(num));
 }
 
@@ -68,28 +73,45 @@ int print_int(va_list ap)
 int _print_int(int num)
 {
 	int i;
-	unsigned int n;
 
 	i = 0;
-	n = num;
 	if (num < 0)
 	{
 		_putchar('-');
-		n = n * -1;
+		num = num * -1;
 		i = i + 1;
 	}
-	if (n == 0)
+	if (num == 0)
 	{
 		_putchar('0');
 		i = i + 1;
 		return (i);
 	}
-	if (n / 10 != 0)
+	if (num / 10 != 0)
 	{
-		i = i + _print_int(n / 10);
-		i = i + 1;
+		i = i + _print_int(num / 10);
 	}
-	_putchar(n % 10 + '0');
+	_putchar(num % 10 + '0');
+	i = i + 1;
+	return (i);
+}
+
+/**
+ * print_unsigned - prints unsigned int
+ * @num: number(s) to be printed
+ * Return: number of integers printed
+ */
+
+int print_unsigned(unsigned int num)
+{
+	int i;
+
+	i = 0;
+	if (num / 10 != 0)
+	{
+		i = i + print_unsigned(num / 10);
+	}
+	_putchar((num % 10) + '0');
 	i = i + 1;
 	return (i);
 }
