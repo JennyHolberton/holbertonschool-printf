@@ -1,3 +1,4 @@
 *~
 *.out
 main.c
+print_int_trials.c

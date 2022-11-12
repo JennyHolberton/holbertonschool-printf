@@ -22,10 +22,11 @@ typedef struct specifier
 int _putchar(char c);
 int print_char(va_list ap);
 int print_str(va_list ap);
-int _print_int(int num);
+int _print_int(unsigned int num);
 int print_int(va_list ap);
 int _printf(const char *format, ...);
 int print_specifier(const char *specifier, va_list ap);
 int print_unsigned(unsigned int num);
+int print_neg(int num);
 
 #endif /*_MAIN_H_*/
