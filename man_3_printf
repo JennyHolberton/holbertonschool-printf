@@ -1,0 +1,69 @@
+.TH man 3 "November 2022" "V1.0" "_printf() man page"
+.SH NAME
+_printf
+.SH SYNOPSIS
+.P
+#include "main.h"
+.P
+int printf(const char *format, ...);
+.SH DESCRIPTION
+The _printf function converts according to the format input argument(s) and prints to stdout.
+.SS Conversion specifiers
+Conversions specifers follow a '%'. Both are replaced by the input argument(s).
+.P
+.I
+c
+Prints one character to stdout.
+.P
+.I
+s
+Prints an array of characters, not including '\\0' (null character) to stdout.
+.P
+.I
+d, i
+Prints an int argument in signed decimal notation to stdout.
+.P
+.I
+%
+Prints '%' to stdout. No argument is converted. The complete conversion specification is '%%'.
+.SH RETURN VALUE
+Function returns the number (count) of total characters printed to the
+standard output. Null character '\0' is not included in the count.
+If the input argument is NULL, or in case of an input error, -1 is
+returned to the standard output.
+.SH EXAMPLES
+.SS To print a character:
+.P
+#include "main.h"
+.P
+char = 'a'
+.P
+_printf("This is the first letter of the alphabet: %c", char);
+.SS To print a string:
+.P
+#include "main.h"
+.P
+_printf("%s", "Holberton is the best school!");
+.SS To print the percentage sign:
+.P
+#include "main.h"
+.P
+_printf("The modulus operator is a %% sign");
+.SS To print a number:
+.P
+#include "main.h"
+.P
+int x = 7;
+.P
+int y = 030286;
+.P
+_printf("%i is a lucky number and %d is a random number", x, y);
+.SH SEE ALSO
+.B
+printf (man 3 printf), write (man 2 write)
+.SH NOTES
+_printf does not implement all the conversion capabilities provided by printf.
+.SH BUGS
+No known bugs
+.SH AUTHORS
+Pallavi Jagtap and Jenny Nguyen
